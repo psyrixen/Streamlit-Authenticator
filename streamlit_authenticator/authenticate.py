@@ -344,7 +344,7 @@ class Authenticate:
                         if preauthorization:
                             if new_email in self.preauthorized['emails']:
                                 self._register_credentials(new_username, new_name, new_password, new_email, preauthorization)
-                                return True
+                                return True,new_email,new_name
                             else:
                                 raise RegisterError('User not pre-authorized to register')
                         else:
